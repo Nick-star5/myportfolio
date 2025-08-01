@@ -1741,9 +1741,9 @@
   font-size: 1rem !important;
 }
 
-/* .fst-italic {
-  font-style: italic !important;
-} */
+.fst-italic {
+  font-style: normal !important;
+}
 
 .fst-normal {
   font-style: normal !important;
