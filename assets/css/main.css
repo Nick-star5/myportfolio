@@ -80,6 +80,11 @@ h6 {
   font-family: var(--heading-font);
 }
 
+.texttitle {
+  color: #757576;
+  font-size: 14px;
+}
+
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
@@ -632,10 +637,10 @@ section,
 
 .swiper-container {
   width: 100%;
-  max-width: 900px;
-  max-height: 620px;
+  max-width: 1024px;
+  max-height: 768px;
   margin: 40px auto;
-  border-radius: 0px;
+  border-radius: 40px;
   overflow: hidden;
   position: relative;
   box-shadow: none;
