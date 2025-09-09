@@ -16,13 +16,13 @@
   --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #000000; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #000000; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --surface-color: #f9f9f9; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #b8b8b8;  /* The default color of the main navmenu links */
+  --nav-color: #1a1a1a;  /* The default color of the main navmenu links */
   --nav-hover-color: #000000; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #f5f5f5; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -34,7 +34,7 @@
 
 .light-background {
   --background-color: #f9f9f9;
-  --surface-color: #ffffff;
+  --surface-color:  #fff;
 }
 
 .dark-background {
@@ -149,7 +149,7 @@ h6 {
 
   /* backdrop-filter: blur(12px) saturate(180%); */
   
-  background-color: rgba(10, 11, 19, 0.86);
+  background-color: rgba(255, 255, 255, );
     
 }
 
@@ -191,7 +191,7 @@ h6 {
 }
 
 .navmenu {
-  position: fixed;
+  position: fixed; 
   top: 0;
   bottom: 0;
   right: -300px;
@@ -216,7 +216,7 @@ h6 {
   color: var(--nav-dropdown-color);
   padding: 10px 20px;
   font-family: var(--nav-font);
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -424,7 +424,7 @@ h6 {
 .page-title {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 120px 0;
+  padding: 8px 0;
   text-align: center;
   position: relative;
   display: flex;
@@ -443,7 +443,7 @@ h6 {
   justify-content: center;
   padding: 0;
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -506,7 +506,7 @@ section,
 }
 
 .portfolio .portfolio-info p {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .portfolio .portfolio-filters {
@@ -519,7 +519,7 @@ section,
   cursor: pointer;
   display: inline-block;
   padding: 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   margin: 0 10px;
   line-height: 1;
@@ -640,7 +640,7 @@ section,
   max-width: 1024px;
   max-height: 768px;
   margin: 40px auto;
-  border-radius: 40px;
+  border-radius: 0px;
   overflow: hidden;
   position: relative;
   box-shadow: none;
@@ -667,6 +667,11 @@ section,
   display: flex;
   flex-direction: row; /* 默认横向，左图右文 */
   gap: 2rem; /* 可选：图文间距 */
+}
+
+.text-p {
+  font-size: 14px;
+  color: #212529;
 }
 
 @media (max-width: 768px) {
@@ -738,8 +743,8 @@ section.container {
 
   section p {
     
-    font-size: 16px;
-    color: #666;
+    font-size: 14px;
+    color: #5b5b5b;
     line-height: 1.8;
   }
 
@@ -1045,7 +1050,7 @@ section.container {
 }
 
 .about .content ul i {
-  font-size: 16px;
+  font-size: 14px;
   margin-right: 5px;
   color: var(--accent-color);
   line-height: 0;
@@ -1079,7 +1084,7 @@ section.container {
 }
 
 .resume .resume-item h5 {
-  font-size: 16px;
+  font-size: 14px;
   padding: 5px 15px;
   display: inline-block;
   font-weight: 600;
