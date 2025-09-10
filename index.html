@@ -65,7 +65,10 @@
 
           <div class="row align-items-center">
             <div class="col-lg-7 portfolio-info">
-              <span class="text-name">Hey, I'm Nick.</span>
+              <h1 class="hero-title">
+              <span class="prefix">Hi, I'm </span>
+              <span id="typed" class="typed"></span>
+              </h1>
               <p>目前在上海从事UI/UX设计工作，喜欢运动、听音乐、旅游…</p>
             </div>
             <div class="col-lg-5 text-center text-lg-end">
@@ -441,6 +444,97 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+(function () {
+  // 要循环显示的文本数组（替换为你的内容）
+  const texts = [
+    "a UI Designer.",
+    "a Product Thinker.",
+    "a Visual Creator."
+  ];
+
+  const typedEl = document.getElementById('typed');
+
+  // 1) 等字体加载完成（避免 webfont 导致测量误差）
+  const readyToMeasure = () => {
+    if (document.fonts && document.fonts.ready) {
+      return document.fonts.ready;
+    }
+    return Promise.resolve();
+  };
+
+  // 2) 创建一个隐藏元素用于测量文本宽度（会复用 .typed 的样式）
+  function measureMaxWidth(items) {
+    // 创建测量节点并复用 typed 的类名以保证字体/字号等一致
+    const measure = document.createElement('span');
+    measure.className = 'typed typed-measure';
+    document.body.appendChild(measure);
+
+    let max = 0;
+    items.forEach(text => {
+      measure.textContent = text;
+      const w = measure.getBoundingClientRect().width;
+      if (w > max) max = w;
+    });
+
+    document.body.removeChild(measure);
+    return Math.ceil(max); // 返回像素值
+  }
+
+  // 3) 初始化：测量并锁定 min-width，然后启动打字动画
+  readyToMeasure().then(() => {
+    const maxW = measureMaxWidth(texts);
+    // 给 typed 元素设置 min-width，留一点余量（例如 0.6rem）防止光标遮挡
+    typedEl.style.minWidth = (maxW + 10) + 'px';
+
+    // 启动打字效果
+    startTyping(texts, typedEl);
+  }).catch(() => {
+    // 兜底：即使字体 API 不可用也继续
+    const maxW = measureMaxWidth(texts);
+    typedEl.style.minWidth = (maxW + 10) + 'px';
+    startTyping(texts, typedEl);
+  });
+
+  // 4) 打字逻辑（循环，保留前缀不动的做法）
+  function startTyping(items, el) {
+    let itemIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    const typingSpeed = 120;   // 打字速度 ms（可调）
+    const deletingSpeed = 60; // 删除速度 ms（可调）
+    const pauseAfter = 1400;  // 每句打完停顿 ms（可调）
+
+    function tick() {
+      const current = items[itemIndex];
+      if (!isDeleting) {
+        charIndex++;
+        el.textContent = current.substring(0, charIndex);
+        if (charIndex === current.length) {
+          isDeleting = true;
+          setTimeout(tick, pauseAfter);
+          return;
+        }
+      } else {
+        charIndex--;
+        el.textContent = current.substring(0, charIndex);
+        if (charIndex === 0) {
+          isDeleting = false;
+          itemIndex = (itemIndex + 1) % items.length;
+        }
+      }
+      const delta = isDeleting ? deletingSpeed : typingSpeed;
+      setTimeout(tick, delta);
+    }
+
+    // 启动
+    tick();
+  }
+
+})();
+</script>
 
 </body>
 

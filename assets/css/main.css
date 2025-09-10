@@ -86,7 +86,7 @@ h6 {
   font-size: 14px;
 }
 
-.text-name {
+/* .text-name {
   font-size: 24px;
   font-weight: 550;
   font-family: var(--heading-font);
@@ -95,7 +95,61 @@ h6 {
    background: linear-gradient(90deg, #27B643, #9470f8);
    -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+} */
+
+  .hero-title {
+    font-family: var(--heading-font);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 8px 0;
+    color: #1a1a1a;
+  }
+
+  .typed {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;           /* 隐藏超出部分 */
+    vertical-align: middle;
+    box-sizing: content-box;    /* border 不影响内宽计算 */
+    /* 不要在这里设置 width 或 min-width，JS 会动态设置 */
+    height: 1.1em;              /* 固定高度，防止行高跳动 */
+    line-height: 1.1;           /* 垂直居中 */
+    /* 光标用伪元素，不会影响文字宽度 */
+    position: relative;
+    /* 关键：渐变文字 */
+    background: linear-gradient(90deg, #27B643, #3333ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* 确保文本透明 */
+  }
+
+  /* 光标（不占用额外布局宽度） */
+  .typed::after {
+    content: "";
+    position: absolute;
+    right: -0.5rem;             /* 光标置于文字右侧一点的空白处 */
+    top: 0.12em;
+    width: 2px;
+    height: 0.85em;
+    background: #1a1a1a;
+    animation: blink 0.9s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    0%,100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+
+  /* 隐藏用于测量的辅助元素 */
+  .typed-measure {
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    white-space: nowrap;
+  }
 
 /* PHP Email Form Messages
 ------------------------------*/
