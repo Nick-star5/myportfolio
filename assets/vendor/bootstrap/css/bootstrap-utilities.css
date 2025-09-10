@@ -718,9 +718,9 @@
   display: none !important;
 }
 
-.shadow {
+/* .shadow {
   box-shadow: var(--bs-box-shadow) !important;
-}
+} */
 
 .shadow-sm {
   box-shadow: var(--bs-box-shadow-sm) !important;
@@ -2300,9 +2300,9 @@
   pointer-events: auto !important;
 }
 
-.rounded {
+/* .rounded {
   border-radius: var(--bs-border-radius) !important;
-}
+} */
 
 .rounded-0 {
   border-radius: 0 !important;

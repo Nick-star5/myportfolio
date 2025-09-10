@@ -212,6 +212,7 @@ h6 {
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
+  border-bottom: 1px solid #edeeee;
 
   /* backdrop-filter: blur(12px) saturate(180%); */
   
@@ -225,7 +226,7 @@ h6 {
 
 .header .logo img {
   max-height: 32px;
-  margin-right: 8px;
+  margin: 0 8px 4px 8px; /* 上 右 下 左 */
 }
 
 .header .logo h1 {
@@ -846,8 +847,10 @@ section.container {
 
 .spotlight-image img {
  width: 100%;
-  max-width: 560px;
+  max-width: 780px;
   height: auto;
+  object-fit: cover;     /* 保持图片比例裁切 */
+  padding: 12px;
 }
 
 .spotlight-content {
@@ -856,19 +859,41 @@ section.container {
   padding-top: 32px;
 }
 
-.spotlight-content h2 {
-  font-size: 2rem;
-  font-weight: 600;
+.spotlight-content h4 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.spotlight-content h6 {
+  font-size: 16px;
+  font-weight: 500;
   margin-bottom: 0.5rem;
   text-align: left;
+  padding: 15px 0 0 10px;
+}
+
+.spotlight-content span {
+  font-size: 12px;
+  text-align: center;
+  display: block;
+  margin: 20px 0;
 }
 
 .spotlight-content p {
-  font-size: 1rem;
-  color: #444;
+  font-size: 16px;
+  color: #5c5c5c;
   line-height: 1.7;
   margin-bottom: 1rem;
   text-align: left;
+
+  max-width: 800px;       /* 控制整体宽度 */
+  margin: 0 auto;         /* 居中 */
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* 上下结构 */
+  gap: 20px;   
 }
 
 @media (max-width: 768px) {
