@@ -18,6 +18,7 @@
   --accent-color: #000000; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #f9f9f9; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --services-color: #27B643;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -83,6 +84,17 @@ h6 {
 .texttitle {
   color: #757576;
   font-size: 14px;
+}
+
+.text-name {
+  font-size: 24px;
+  font-weight: 550;
+  font-family: var(--heading-font);
+  display: inline-block;
+  margin-bottom: 6px;
+   background: linear-gradient(90deg, #27B643, #9470f8);
+   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* PHP Email Form Messages
@@ -862,15 +874,15 @@ section.container {
 }
 
 .services .service-item .icon {
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
   position: relative;
   margin-bottom: 50px;
 }
 
 .services .service-item .icon i {
-  color: color-mix(in srgb, var(--heading-color), transparent 30%);
-  font-size: 56px;
+  color: color-mix(in srgb, var(--services-color), transparent 1%);
+  font-size: 48px;
   transition: ease-in-out 0.3s;
   z-index: 2;
   position: relative;
@@ -881,7 +893,7 @@ section.container {
   content: "";
   height: 100%;
   width: 100%;
-  background: color-mix(in srgb, var(--heading-color), transparent 95%);
+  background: color-mix(in srgb, var(--services-color), transparent 90%);
   border-radius: 50px;
   z-index: 1;
   top: 10px;
@@ -897,7 +909,7 @@ section.container {
   font-size: 22px;
   position: relative;
   display: inline-block;
-  border-bottom: 4px solid color-mix(in srgb, var(--heading-color), transparent 90%);
+  border-bottom: 1px solid color-mix(in srgb, var(--heading-color), transparent 90%);
   transition: 0.3s;
 }
 
