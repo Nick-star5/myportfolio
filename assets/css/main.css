@@ -804,7 +804,7 @@ section.container {
 
   section h2 {
     font-weight: 600;
-    font-size: 28px;
+    font-size: 24px;
     color: #333;
   }
 
@@ -815,20 +815,19 @@ section.container {
     line-height: 1.8;
   }
 
+  .custom-img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-left: 0;
+}
+
   @media (max-width: 768px) {
     section.container {
       padding: 2rem 1rem;
     }
   }
-
-  .custom-img {
-  max-width: 320px;
-  width: 100%;
-  height: 200px;
-  display: block;
-  margin-left: 0;
-}
-
 
 /*--------------------------------------------------------------
 # Blog details
