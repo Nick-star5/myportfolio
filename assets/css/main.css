@@ -382,6 +382,7 @@ h6 {
   margin-top: 20px;
 }
 
+
 .footer .social-links a {
   display: flex;
   align-items: center;
@@ -730,23 +731,6 @@ section,
   margin-bottom: 60px;
 }
 
-.custom-layout {
-  display: flex;
-  flex-direction: row; /* 默认横向，左图右文 */
-  gap: 2rem; /* 可选：图文间距 */
-}
-
-.text-p {
-  font-size: 14px;
-  color: #212529;
-}
-
-@media (max-width: 768px) {
-  .custom-layout {
-    flex-direction: column-reverse; /* 手机端：先文后图 */
-  }
-}
-
 .custom-images {
   display: flex;
   flex-direction: column;
@@ -755,25 +739,32 @@ section,
 }
 
 .custom-images img {
-  width: 920px;
+  width: 100%;
+  height: auto;
   border-radius: 0px;
   box-shadow: none;
+  display: block;
 }
 
 .custom-fixed-text {
   flex: 1;
-  max-width: 500px;
+  max-width: 280px;
   position: sticky;
   top: 100px;
 }
 
-.custom-fixed-text h2 {
-  font-size: 26px;
+.text-p {
+  font-size: 16px;
+  color: #5a5a5a;
+}
+
+.custom-fixed-text h6 {
+  font-size: 14px;
   margin-bottom: 12px;
 }
 
 .custom-fixed-text p {
-  color: #444;
+  color: #5a5a5a;
   line-height: 1.6;
 }
 
@@ -783,12 +774,21 @@ section,
     flex-direction: column;
   }
 
+  /* 文字区域在上 */
   .custom-fixed-text {
+    order: 1;
+    max-width: 100%;
     position: static;
+  }
+
+  /* 图片区域在下 */
+  .custom-images {
+    order: 2;
   }
 
   .custom-images img {
     width: 100%;
+    margin-bottom: 12px;
   }
 }
 
