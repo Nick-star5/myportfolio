@@ -665,6 +665,23 @@ section,
   overflow: hidden;
 }
 
+.pg-title-font {
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  padding-top: 8px;
+}
+
+.pg-title-font p{
+  color:#393939;
+  font-size:18px;
+  margin:2px 0px 0px;
+}
+
+.pg-title-font span{
+  font-size:14px;
+  color: #ccc;;
+  line-height:1.6;
+}
+
 .portfolio .portfolio-content .portfolio-info h4 {
   font-size: 18px;
   mask-border: 0;
